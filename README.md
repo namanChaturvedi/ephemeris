@@ -113,7 +113,13 @@ npx hardhat test
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the GNU Affero General Public License v3.0 (AGPL-3.0).
+
+The AGPL-3.0 is a copyleft license that requires anyone who distributes your code or a derivative work to make the source available under the same terms, and also requires that the source be provided to anyone who interacts with the software over a network.
+
+For more information, see the [GNU Affero General Public License v3.0](https://www.gnu.org/licenses/agpl-3.0.en.html).
+
+To add the full license text to your project, you can create a LICENSE file with the content from: https://www.gnu.org/licenses/agpl-3.0.txt
 
 ## Acknowledgements
 
