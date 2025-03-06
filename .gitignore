@@ -38,3 +38,7 @@ logs/
 # Misc
 .tmp/
 .temp/
+
+# Checkpoint files
+.ephemeris-checkpoint.json
+README.checkpoint.md
