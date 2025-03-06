@@ -1,0 +1,38 @@
+{
+  "name": "ephemeris-astrology-dapp",
+  "version": "0.1.0",
+  "description": "A Binance Smart Chain astrology dApp that enables users to generate personalized horoscope birth charts and mint them as NFTs.",
+  "main": "hardhat.config.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "hardhat test",
+    "compile": "hardhat compile",
+    "deploy:local": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
+    "deploy:testnet": "hardhat run scripts/deploy.js --network bnbTestnet",
+    "deploy:mainnet": "hardhat run scripts/deploy.js --network bnbMainnet",
+    "node": "hardhat node",
+    "frontend": "cd frontend && npm start"
+  },
+  "keywords": [
+    "blockchain",
+    "astrology",
+    "nft",
+    "binance-smart-chain",
+    "dapp"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@openzeppelin/contracts": "^5.2.0",
+    "dotenv": "^16.4.7",
+    "hardhat": "^2.22.19"
+  },
+  "dependencies": {
+    "crypto-js": "^4.2.0"
+  }
+}
