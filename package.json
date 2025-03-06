@@ -17,7 +17,12 @@
     "node": "hardhat node",
     "frontend": "cd frontend && npm start",
     "dev": "node scripts/dev.js",
-    "start": "npm run dev"
+    "start": "npm run dev",
+    "node:private": "hardhat node",
+    "deploy:private": "hardhat run scripts/deploy.js --network private",
+    "frontend:private": "cd frontend && cross-env REACT_APP_CHAIN_ID=0x539 npm start",
+    "setup:private": "node scripts/setup-private-testnet.js",
+    "start:private": "node scripts/start-private-testnet.js"
   },
   "keywords": [
     "blockchain",
@@ -31,6 +36,7 @@
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^4.0.0",
     "@openzeppelin/contracts": "^5.2.0",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.4.7",
     "hardhat": "^2.22.19"
   },
