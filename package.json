@@ -15,7 +15,9 @@
     "deploy:testnet": "hardhat run scripts/deploy.js --network bnbTestnet",
     "deploy:mainnet": "hardhat run scripts/deploy.js --network bnbMainnet",
     "node": "hardhat node",
-    "frontend": "cd frontend && npm start"
+    "frontend": "cd frontend && npm start",
+    "dev": "node scripts/dev.js",
+    "start": "npm run dev"
   },
   "keywords": [
     "blockchain",

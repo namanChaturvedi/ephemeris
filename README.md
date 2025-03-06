@@ -26,7 +26,7 @@ The system uses complex astronomical algorithms to compute planetary positions, 
 
 ## Tech Stack
 
-- **Frontend**: React with TypeScript
+- **Frontend**: React with Tailwind CSS
 - **Smart Contracts**: Solidity ^0.8.0
 - **Development Environment**: Hardhat
 - **Blockchain Interaction**: ethers.js
@@ -72,37 +72,63 @@ The system uses complex astronomical algorithms to compute planetary positions, 
 2. Install dependencies:
    ```
    npm install
+   cd frontend && npm install && cd ..
    ```
 
-3. Set up the frontend:
+3. Set up environment variables:
    ```
-   cd frontend
-   npm install
+   cp .env.example .env
+   cp frontend/.env.example frontend/.env
    ```
+   Edit the `.env` files with your configuration.
 
 ### Development
 
-1. Start the local Hardhat node:
+1. Start the complete development environment (Hardhat node, contract deployment, and frontend):
    ```
-   npx hardhat node
-   ```
-
-2. Deploy contracts to the local network:
-   ```
-   npx hardhat run scripts/deploy.js --network localhost
-   ```
-
-3. Start the frontend development server:
-   ```
-   cd frontend
    npm start
+   ```
+
+   This will:
+   - Start a local Hardhat node
+   - Deploy contracts to the local network
+   - Extract ABIs for the frontend
+   - Start the frontend development server
+
+2. Alternatively, you can run each component separately:
+
+   Start the local Hardhat node:
+   ```
+   npm run node
+   ```
+
+   Deploy contracts to the local network:
+   ```
+   npm run deploy:local
+   ```
+
+   Start the frontend development server:
+   ```
+   npm run frontend
    ```
 
 ### Testing
 
 Run the smart contract tests:
 ```
-npx hardhat test
+npm test
+```
+
+### Deployment
+
+Deploy to BSC Testnet:
+```
+npm run deploy:testnet
+```
+
+Deploy to BSC Mainnet:
+```
+npm run deploy:mainnet
 ```
 
 ## Security
@@ -118,8 +144,6 @@ This project is licensed under the GNU Affero General Public License v3.0 (AGPL-
 The AGPL-3.0 is a copyleft license that requires anyone who distributes your code or a derivative work to make the source available under the same terms, and also requires that the source be provided to anyone who interacts with the software over a network.
 
 For more information, see the [GNU Affero General Public License v3.0](https://www.gnu.org/licenses/agpl-3.0.en.html).
-
-To add the full license text to your project, you can create a LICENSE file with the content from: https://www.gnu.org/licenses/agpl-3.0.txt
 
 ## Acknowledgements
 

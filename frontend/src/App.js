@@ -3,10 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { WalletProvider } from './context/WalletContext';
 import Home from './pages/Home';
 import BirthChart from './pages/BirthChart';
-import MyHoroscopes from './pages/MyHoroscopes';
 import Matching from './pages/Matching';
-import Horoscopes from './pages/Horoscopes';
-import AuspiciousTimes from './pages/AuspiciousTimes';
+import Horoscope from './pages/Horoscope';
 import NetworkSelector from './components/NetworkSelector';
 import { useWallet } from './context/WalletContext';
 import './App.css';
@@ -60,17 +58,8 @@ const AppContent = () => {
                   <Link to="/birth-chart" className="px-3 py-2 rounded-lg hover:bg-indigo-700 transition duration-300">
                     Birth Chart
                   </Link>
-                  <Link to="/my-horoscopes" className="px-3 py-2 rounded-lg hover:bg-indigo-700 transition duration-300">
-                    My Horoscopes
-                  </Link>
                   <Link to="/matching" className="px-3 py-2 rounded-lg hover:bg-indigo-700 transition duration-300">
                     Matching
-                  </Link>
-                  <Link to="/horoscopes" className="px-3 py-2 rounded-lg hover:bg-indigo-700 transition duration-300">
-                    Weekly Horoscopes
-                  </Link>
-                  <Link to="/auspicious-times" className="px-3 py-2 rounded-lg hover:bg-indigo-700 transition duration-300">
-                    Auspicious Times
                   </Link>
                 </nav>
                 
@@ -84,10 +73,8 @@ const AppContent = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/birth-chart" element={<BirthChart />} />
-            <Route path="/my-horoscopes" element={<MyHoroscopes />} />
             <Route path="/matching" element={<Matching />} />
-            <Route path="/horoscopes" element={<Horoscopes />} />
-            <Route path="/auspicious-times" element={<AuspiciousTimes />} />
+            <Route path="/horoscope/:tokenId" element={<Horoscope />} />
           </Routes>
         </main>
         

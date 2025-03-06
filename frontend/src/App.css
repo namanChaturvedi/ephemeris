@@ -1,18 +1,17 @@
-/* Global styles for Ephemeris DApp */
+/* App.css */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
-
+/* Global Variables */
 :root {
-  --color-primary: #8b5cf6;
-  --color-primary-dark: #7c3aed;
-  --color-secondary: #4f46e5;
-  --color-secondary-dark: #4338ca;
-  --color-background: #1e1b4b;
-  --color-background-light: #312e81;
-  --color-text: #f3f4f6;
-  --color-text-muted: #c7d2fe;
+  --primary-color: #6d28d9;
+  --primary-hover: #5b21b6;
+  --secondary-color: #4f46e5;
+  --secondary-hover: #4338ca;
+  --text-color: #1f2937;
+  --light-text: #6b7280;
+  --background: #f3f4f6;
 }
 
+/* Global Styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -20,31 +19,31 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--color-background);
-  color: var(--color-text);
-  line-height: 1.6;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-color);
+  background-color: var(--background);
+  line-height: 1.5;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   line-height: 1.2;
+  margin-bottom: 1rem;
 }
 
 a {
-  color: var(--color-primary);
+  color: var(--primary-color);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: var(--color-primary-dark);
+  color: var(--primary-hover);
 }
 
 button {
   cursor: pointer;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 button:disabled {
@@ -52,26 +51,26 @@ button:disabled {
   opacity: 0.7;
 }
 
-/* Custom scrollbar */
+/* Scrollbar Styles */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-background-light);
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-primary);
+  background: #888;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-primary-dark);
+  background: #555;
 }
 
-/* Animation for stars in the background */
+/* Animations */
 @keyframes twinkle {
   0% { opacity: 0.3; }
   50% { opacity: 1; }
@@ -79,85 +78,87 @@ button:disabled {
 }
 
 .star {
-  position: fixed;
-  width: 2px;
-  height: 2px;
+  position: absolute;
   background-color: white;
   border-radius: 50%;
-  animation: twinkle 4s infinite;
+  animation: twinkle 3s infinite;
+  animation-delay: calc(var(--delay) * 1s);
+  width: calc(var(--size) * 1px);
+  height: calc(var(--size) * 1px);
 }
 
-/* Form styles */
+/* Form Elements */
 .form-input {
   width: 100%;
   padding: 0.75rem 1rem;
-  background-color: rgba(79, 70, 229, 0.2);
-  border: 1px solid rgba(139, 92, 246, 0.3);
-  border-radius: 0.5rem;
-  color: var(--color-text);
-  transition: border-color 0.3s ease;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
 }
 
 .form-input:focus {
-  outline: none;
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.2);
 }
 
 .form-input::placeholder {
-  color: rgba(199, 210, 254, 0.6);
+  color: #9ca3af;
 }
 
-/* Card styles */
+/* Card Styles */
 .card {
-  background-color: rgba(49, 46, 129, 0.5);
-  border-radius: 0.75rem;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
-/* Button styles */
+/* Button Styles */
 .btn {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
-  font-weight: 600;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
   text-align: center;
-  border-radius: 0.5rem;
   transition: all 0.3s ease;
+  border: none;
 }
 
 .btn-primary {
-  background-color: var(--color-primary);
+  background-color: var(--primary-color);
   color: white;
 }
 
 .btn-primary:hover {
-  background-color: var(--color-primary-dark);
+  background-color: var(--primary-hover);
 }
 
 .btn-secondary {
-  background-color: var(--color-secondary);
+  background-color: var(--secondary-color);
   color: white;
 }
 
 .btn-secondary:hover {
-  background-color: var(--color-secondary-dark);
+  background-color: var(--secondary-hover);
 }
 
-/* Loading spinner */
+/* Loading Spinner */
 .spinner {
-  border: 4px solid rgba(139, 92, 246, 0.3);
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: var(--primary-color);
   border-radius: 50%;
-  border-top: 4px solid var(--color-primary);
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
   animation: spin 1s linear infinite;
+  margin: 0 auto;
 }
 
 @keyframes spin {
