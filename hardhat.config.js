@@ -12,6 +12,17 @@ const BSCSCAN_API_KEY = process.env.BSCSCAN_API_KEY || "";
 module.exports = {
   solidity: "0.8.20",
   networks: {
+  private: {
+    url: "http://127.0.0.1:8545",
+    accounts: {
+      mnemonic: "test test test test test test test test test test test junk", // DO NOT use in production
+      path: "m/44'/60'/0'/0",
+      initialIndex: 0,
+      count: 10
+    },
+    chainId: 1337,
+    saveDeployments: true
+  },
     localhost: {
       url: "http://127.0.0.1:8545",
       chainId: 31337,
