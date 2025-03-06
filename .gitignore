@@ -11,6 +11,7 @@ typechain-types/
 
 # Environment variables
 .env
+.env.private
 
 # Build files
 dist/
@@ -42,3 +43,6 @@ logs/
 # Checkpoint files
 .ephemeris-checkpoint.json
 README.checkpoint.md
+
+# Private testnet
+private-testnet-setup.md
